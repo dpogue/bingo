@@ -1,0 +1,127 @@
+:root {
+    --brand: #1a5dad;
+    --brand-text: #ffffff;
+    --accent: #ffff66;
+    --text: rgba(0, 0, 0, 0.87);
+    --background: #dcdcdc;
+    --foreground: #ffffff;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+    :root {
+        --brand: #1a5dad;
+        --brand-text: #ffffff;
+        --accent: #ffff66;
+        --text: rgba(255, 255, 255, 0.87);
+        --background: #1d1d1d;
+        --foreground: #333333;
+    }
+}
+
+body {
+    background: var(--background, #eeeeee);
+    color: var(--text, #333333);
+    font-family: system-ui, -apple-system, sans-serif;
+    user-select: none;
+    padding: 0;
+    margin: 0;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    min-height: 100vh;
+}
+
+header {
+    height: 56px;
+    line-height: 56px;
+    padding-top: env(safe-area-inset-top, 0px);
+    background: var(--brand, lightsteelblue);
+    color: var(--brand-text, white);
+    position: sticky;
+    top: 0;
+}
+
+header h1 {
+    margin: 0;
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.25rem;
+}
+
+header button {
+    position: fixed;
+    top: env(safe-area-inset-top, 0px);
+    right: env(safea-area-inset-right, 0px);
+    height: 56px;
+    width: 56px;
+    background: none;
+    color: inherit;
+    border: 0 none;
+}
+
+header button svg {
+    fill: currentColor;
+    height: 24px;
+    width: 24px;
+}
+
+ytp-board {
+    max-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px) - (2 * 56px));
+}
+
+ytp-board table {
+    border-spacing: clamp(5px, 5vw, 0.5rem);
+}
+
+ytp-board label {
+    display: flex;
+    flex-direction: column;
+    max-width: 100px;
+    width: 15vw;
+    aspect-ratio: 1 / 1;
+    background: var(--foreground, white);
+    text-align: center;
+    padding: 0.25rem;
+    justify-content: space-around;
+    font-size: 0.75rem;
+    border-radius: 2px;
+}
+
+@media screen and (max-width: 480px) {
+    ytp-board label {
+        font-size: 0;
+    }
+}
+
+ytp-board input:checked + label {
+    background: var(--background, #eeeeee);
+}
+
+ytp-board label::before {
+    content: attr(for) / "";
+    text-transform: uppercase;
+    font-size: 2rem;
+}
+
+ytp-board input:checked + label::before {
+    text-decoration: line-through;
+}
+
+ytp-board input {
+    position: absolute;
+    opacity: 0;
+}
+
+ytp-board input:focus + label {
+    outline: var(--brand, -webkit-focus-ring-color) auto 2px;
+}
+
+ytp-board td.empty {
+    background: url(train.svg);
+    background-size: 90% 90%;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
