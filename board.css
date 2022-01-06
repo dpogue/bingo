@@ -21,7 +21,7 @@
 body {
     background: var(--background, #eeeeee);
     color: var(--text, #333333);
-    font-family: system-ui, -apple-system, sans-serif;
+    font-family: system-ui, sans-serif;
     user-select: none;
     padding: 0;
     margin: 0;
@@ -101,6 +101,7 @@ ytp-board input:checked + label {
 }
 
 ytp-board label::before {
+    content: attr(for);
     content: attr(for) / "";
     text-transform: uppercase;
     font-size: 2rem;
