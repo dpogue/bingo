@@ -55,6 +55,7 @@ header button {
     background: none;
     color: inherit;
     border: 0 none;
+    cursor: pointer;
 }
 
 header button svg {
@@ -88,6 +89,7 @@ ytp-board label {
     justify-content: space-around;
     font-size: 0.75rem;
     border-radius: 2px;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 480px) {
