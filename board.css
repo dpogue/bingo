@@ -28,6 +28,7 @@ body {
     margin: 0;
     padding-bottom: env(safe-area-inset-bottom, 0px);
     min-height: 100vh;
+    min-height: 100dvh;
 }
 
 header {
