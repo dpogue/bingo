@@ -1,8 +1,14 @@
 const btnNew = document.getElementById("btn-new");
+const btnHelp = document.getElementById("btn-help");
 const board = document.getElementById("board");
+const dlgHelp = document.getElementById("dlg-help");
 
 btnNew.addEventListener("click", () => {
     board.resetBoard();
+});
+
+btnHelp.addEventListener("click", () => {
+    dlgHelp.showModal();
 });
 
 board.addEventListener("statechange", (e) => {

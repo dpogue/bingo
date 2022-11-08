@@ -4,19 +4,52 @@
         <meta charset="utf-8">
         <title>Bingo PIES</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+        <meta name="supported-color-schemes" content="light dark">
+        <meta name="color-scheme" content="light dark">
         <link rel="stylesheet" href="board.css">
     </head>
     <body>
         <header>
             <h1>Yellow Bingo PIES</h1>
-            <button id="btn-new" aria-label="New game" title="New game">
+            <button class="left" id="btn-new" aria-label="New game" title="New game">
                 <svg viewBox="0 0 24 24">
                     <path d="M3 3h8v8H3zm10 0h8v8h-8zM3 13h8v8H3zm15 0h-2v3h-3v2h3v3h2v-3h3v-2h-3z"/>
+                </svg>
+            </button>
+            <button class="right" id="btn-help" aria-label="Help" title="Help">
+                <svg viewBox="0 0 24 24">
+                    <path d="M11.88 18q.62 0 1.07-.45.45-.45.45-1.07t-.45-1.07q-.45-.43-1.07-.43t-1.08.43q-.45.44-.45 1.07t.45 1.07q.45.45 1.07.45Zm-1.18-3.85h2.35q0-.72.2-1.23.2-.5.95-1.22.57-.55.94-1.17.36-.63.36-1.5 0-1.5-.98-2.3-.97-.78-2.37-.78-1.53 0-2.54.88Q8.6 7.7 8.2 8.9l2.2.82q.17-.5.55-1t1.07-.5q.5 0 .78.32.27.31.27.68 0 .38-.26.78t-.54.63q-1 .92-1.28 1.5-.29.6-.29 2.02Zm1.3 8.7q-2.27 0-4.25-.85t-3.44-2.31Q2.85 18.23 2 16.25q-.85-1.98-.85-4.25T2 7.75q.85-1.98 2.31-3.44Q5.78 2.85 7.75 2q1.98-.85 4.25-.85t4.25.85q1.98.85 3.44 2.31Q21.15 5.78 22 7.75q.85 1.98.85 4.25T22 16.25q-.85 1.98-2.31 3.44T16.25 22q-1.98.85-4.25.85Z"/>
                 </svg>
             </button>
         </header>
 
         <ytp-board id="board"></ytp-board>
+
+        <dialog id="dlg-help" aria-label="dlg-heading">
+            <h1 id="dlg-heading">Yellow Bingo PIES Rules</h1>
+            <ol>
+                <li>
+                    You can mark a square when you hear a call of "Yellow Tango PIES" for a station from SkyTrain Control.
+                    <ul>
+                        <li>"Yellow Tango GIMS" do not count</li>
+                        <li>"Red Tango" calls from the platform do not count</li>
+                        <li>A "Yellow Tango PIES" call from Control that turns out to be a "Red Tango" is permitted</li>
+                    </ul>
+                </li>
+                <li>
+                    In the event of a "Red Sierra", the game is suspended.
+                </li>
+                <li>
+                    A board may only be used for a continuous session. You may not "pause" a game and resume it at a later time.
+                </li>
+                <li>
+                    The game is suspended at the end of revenue service.
+                </li>
+            </ol>
+            <form method="dialog">
+                <button>Resume Game</button>
+            </form>
+        </dialog>
 
         <script src="ytp-board.js" type="module"></script>
         <script src="game.js" type="module"></script>
